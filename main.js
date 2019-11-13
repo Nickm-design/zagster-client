@@ -1,5 +1,5 @@
 $(updateView)
 
 function updateView() {
-    alert("Using jQuerty")
+    alert("Data Visualization Project")
 }
