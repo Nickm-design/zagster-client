@@ -15,6 +15,7 @@ function updateView() {
     $("h2#rideCount").html(numberOfRides)
   }
 
+
   google.charts.load('current', {'packages':['corechart']});
 
   google.charts.setOnLoadCallback(drawwinterchart);
