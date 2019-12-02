@@ -4,10 +4,10 @@ const BASE_URL = "https://zagster-service.herokuapp.com"
 
 // // jQuery command. Wait until we page loads call funtion whose name is in ()
 // //function call means run the code
-// // $(updateGraph)
+$(updateGraph)
 // $(greeter("Nick's"))
 
-// // call function add (use it - make it run) 
+// call function add (use it - make it run) 
 // add(2, 3);
 // // greeter is the function identifier, anem is the fucntions argument (info it need to do its job)
 // function add(num1, num2){
@@ -29,17 +29,17 @@ const BASE_URL = "https://zagster-service.herokuapp.com"
 //     alert("you're young!")
 // }
 
-// var data = {"2016":[{"9":220}, {"10":141}, {"11":89}, {"12":16}]}
-// var year_list = data[2016]
-// console.log('year list is ' + year_list)
+var data = {"2016":[{"9":220}, {"10":141}, {"11":89}, {"12":16}]}
+var year_list = data[2016]
+console.log('year list is ' + year_list)
 
-// console.log(year_list[0][9])
-// console.log(year_list[1][10])
-// console.log(year_list[2][11])
-// console.log(year_list[3][12])
-// function updateView() {
-//     alert("Data Visualization Project")
-// }
+console.log(year_list[0][9])
+console.log(year_list[1][10])
+console.log(year_list[2][11])
+console.log(year_list[3][12])
+function updateView() {
+    alert("Data Visualization Project")
+}
 
 $(updateView)
 
@@ -174,24 +174,24 @@ function perYear(data) {
 //     chart.draw(data, options);
 //   }
 
-// function updateGraph() { 
-// var ctx = document.getElementById('myChart').getContext('2d');
-// var chart = new Chart(ctx, {
-//     // The type of chart we want to create
-//     type: 'line',
+function updateGraph() { 
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
 
-//     // The data for our dataset
-//     data: {
-//         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-//         datasets: [{
-//             label: 'My First dataset',
-//             backgroundColor: 'rgb(255, 99, 132)',
-//             borderColor: 'rgb(255, 99, 132)',
-//             data: [0, 10, 5, 2, 20, 30, 45]
-//         }]
-//     },
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
 
-//     // Configuration options go here
-//     options: {}
-// });
-// }
+    // Configuration options go here
+    options: {}
+});
+}
