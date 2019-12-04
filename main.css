@@ -24,3 +24,12 @@ h2 {
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+#aboutsection {
+    float: bottom;
+}
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#about {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
