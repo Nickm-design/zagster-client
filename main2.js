@@ -1,19 +1,19 @@
+// a constant's value can never change.
 const BASE_URL = "https://zagster-service.herokuapp.com"
 
+//call function updateView() after the page loads
 $(updateView)
 
 
+//Arrays to hold data points pulled from JQUERY
 var my_data = []
-
-var my_data_seasons = []
 
 function updateView() {
   
   $.when ($.getJSON(BASE_URL + "/rides/count/per_month", perYear), 
     ).then(updateChart);
 
-  $.when ($.getJSON(BASE_URL + "/rides/count/per_month", perYear), 
-      ).then(updateBar);
+
 }
 
 
@@ -24,16 +24,20 @@ function perYear(data) {
 
     console.log(data2017[0][1])
     my_data.push(data2017[0][1]) 
-    console.log(data2017[1][2])  
+    console.log(data2017[1][2]) 
+    my_data.push(data2017[1][2]) 
     console.log(data2017[2][3])
     my_data.push(data2017[2][3])
     console.log(data2017[3][4]) 
+    my_data.push(data2017[3][4])
     console.log(data2017[4][5]) 
+    my_data.push(data2017[4][5])
     console.log(data2017[5][6])
     my_data.push(data2017[5][6])
     console.log(data2017[6][7]) 
     my_data.push(data2017[6][7])
     console.log(data2017[7][8])  
+    my_data.push(data2017[7][8])
     console.log(data2017[8][9])
     my_data.push(data2017[8][9])
     console.log(data2017[9][10]) 
