@@ -8,6 +8,8 @@ $(updateView)
 //Arrays to hold data points pulled from JQUERY
 var my_data = []
 
+var my_data_seasons = []
+
 //updateView() function definition
 //this function gets JSON data from the web server endpoint /rides/count/per_month and calls the function perYear()
 //after the function perYear runs it will call the function updateChart()
@@ -15,7 +17,11 @@ function updateView() {
   
   $.when ($.getJSON(BASE_URL + "/rides/count/per_month", perYear), 
     ).then(updateChart);
+
+  $.when ($.getJSON(BASE_URL + "/rides/count/per_month", perYear), 
+      ).then(updateBar);
 }
+
 
 
 // This is what your JSON data looks like given the endpoint /rides/count/per_month 
@@ -60,7 +66,30 @@ function perYear(data) {
     console.log(data2017[11][12])
     my_data.push(data2017[11][12]) //add the data to the my_data array 
     //keep going to get all data points
-
+    var jan_data=data2017[0][1]
+    var feb_data=data2017[1][2]
+    var mar_data=data2017[2][3]
+    var april_data=data2017[3][4]
+    var may_data=data2017[4][5]
+    var june_data=data2017[5][6]
+    var july_data=data2017[6][7]
+    var aug_data=data2017[7][8]
+    var sep_data=data2017[8][9]
+    var oct_data=data2017[9][10]
+    var nov_data=data2017[10][11]
+    var dec_data=data2017[11][12]
+    var jan_feb_mar=jan_data + feb_data + mar_data
+    var april_may_june=april_data + may_data + june_data
+    var july_aug_sep=july_data + aug_data + sep_data
+    var oct_nov_dec_=oct_data + nov_data + dec_data
+    // my_data_seasons.push(jan_feb_mar)
+    // console.log(jan_feb_mar)
+    // my_data_seasons.push(april_may_june)
+    // console.log(april_may_june)
+    // my_data_seasons.push(july_aug_sep)
+    // console.log(july_aug_sep)
+    // my_data_seasons.push(oct_nov_dec_)
+    // console.log(oct_nov_dec_)
    
     //challenge - use a loop to extract the data
     //challenge extract the keys from the JSON data instead of manually typing them into the chart
@@ -81,14 +110,17 @@ function updateChart() {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets: [{
                 label: 'Zagster Number of Rides Per Month in 2017',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'black',
+                borderColor: 'grey',
                 //data: [0, 10, 5, 2, 20, 30, 45]
                 data: my_data  //make the chart use your my_data array
             }]
         },
 
         // Configuration options go here
-        options: {}
+        options: {
+            
+        } 
     });
+
 }
